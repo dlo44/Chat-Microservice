@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "All Maven Tests",
+      "setup": "mvn compile",
+      "run": "mvn test -P test",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 0
+    }
+  ]
+}
