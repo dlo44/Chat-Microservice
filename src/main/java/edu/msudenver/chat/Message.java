@@ -17,7 +17,6 @@ import java.util.Date;
 })
 public class Message {
 
-
     @Id
     @Column(name = "message_id", columnDefinition = "SERIAL")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,14 +34,6 @@ public class Message {
     @NotNull(message = "senderId cannot be null")
     private Long senderId;
 
-//    @ManyToOne()
-//    @JoinColumn(name = "sender_id", referencedColumnName = "id", insertable = false, updatable = false)
-//    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-//    private Player player;
-
-    //  Access to player class from Player Team
-    //  Identify/match the column name
-
     @Column(name = "message_body")
     @JsonProperty(access = JsonProperty.Access.READ_WRITE)
     private String messageBody;
@@ -54,11 +45,10 @@ public class Message {
     public Message() {
     }
 
-    public Message(Long messageId, LocalDateTime dateSent, Long senderId, String player, String messageBody, String messageType) {
+    public Message(Long messageId, LocalDateTime dateSent, Long senderId,  String messageBody, String messageType) {
         this.messageId = messageId;
         this.dateSent = dateSent;
         this.senderId = senderId;
-//        this.player = player;
         this.messageBody = messageBody;
         this.messageType = messageType;
     }
@@ -86,13 +76,6 @@ public class Message {
         this.senderId = senderId;
     }
 
-//    public Player getPlayer() {
-//        return player;
-//    }
-//
-//    public void setPlayer(Player player) {
-//        this.player = player;
-//    }
 
     public String getMessageBody() {
         return messageBody;
