@@ -7,9 +7,6 @@ import org.hibernate.annotations.*;
 import javax.validation.constraints.NotNull;
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.Date;
-
-//import edu.msudenver.zone.Player;
 
 @MappedSuperclass
 @TypeDefs({
