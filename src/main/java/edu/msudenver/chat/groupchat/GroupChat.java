@@ -1,7 +1,6 @@
 package edu.msudenver.chat.groupchat;
 
 import edu.msudenver.chat.Message;
-import edu.msudenver.city.CityId;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
