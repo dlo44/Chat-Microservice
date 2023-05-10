@@ -20,6 +20,10 @@ public class GroupChatService {
     @PersistenceContext
     protected EntityManager entityManager;
 
+    public List<GroupChat> getAllMessages(Long groupId) {
+        return groupChatRepository.findGroupChatsByGroupId(groupId);
+    }
+
     public List<GroupChat> getGroupChats(Long groupId, LocalDateTime start, LocalDateTime end) {
         try {
             if(start != null && end != null) return  groupChatRepository.findGroupChatsByDateSentBetweenAndGroupId( start, end, groupId);
