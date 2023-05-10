@@ -1,14 +1,10 @@
 package edu.msudenver.chat.privatechat;
 
 import edu.msudenver.TestConfig;
-import edu.msudenver.chat.privatechat.PrivateChat;
-import edu.msudenver.chat.privatechat.PrivateChatRepository;
-import edu.msudenver.chat.privatechat.PrivateChatService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
-import static org.mockito.Mockito.times;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -16,13 +12,10 @@ import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 @Import(TestConfig.class)
