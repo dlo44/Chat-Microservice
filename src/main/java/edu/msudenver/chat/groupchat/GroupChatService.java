@@ -1,17 +1,12 @@
 package edu.msudenver.chat.groupchat;
 
 
-//import edu.msudenver.chat.broadcast.Broadcast;
-import edu.msudenver.chat.privatechat.PrivateChat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
-import java.sql.Time;
-import java.sql.Timestamp;
-import java.util.Date;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -24,10 +19,6 @@ public class GroupChatService {
 
     @PersistenceContext
     protected EntityManager entityManager;
-
-    public List<GroupChat> getAllMessages(Long groupId) {
-        return groupChatRepository.findGroupChatsByGroupId(groupId);
-    }
 
     public List<GroupChat> getGroupChats(Long groupId, LocalDateTime start, LocalDateTime end) {
         try {

@@ -1,5 +1,4 @@
-package edu.msudenver.chat.groupchat;//package edu.msudenver.chat.groupchat;
-//
+//package edu.msudenver.chat.groupchat;
 //import edu.msudenver.TestConfig;
 //import org.springframework.context.annotation.Import;
 //import org.junit.jupiter.api.BeforeEach;
@@ -48,12 +47,12 @@ package edu.msudenver.chat.groupchat;//package edu.msudenver.chat.groupchat;
 //        GroupChat testMessage = new GroupChat();
 //        testMessage.setMessageId(1L);
 //        testMessage.setSenderId(1L);
-//        testMessage.setDateSent(Timestamp.valueOf(LocalDateTime.now()).toLocalDateTime());
+//        testMessage.setDateSent(LocalDateTime.now());
 //        testMessage.setGroupId(1L);
 //        testMessage.setMessageBody("Hello World");
 //
 //        Mockito.when(groupChatRepository.findGroupChatsByGroupId(Mockito.any())).thenReturn(Arrays.asList(testMessage));
-//        List<GroupChat> groupChats = groupChatService.getAllMessages(1L);
+//        List<GroupChat> groupChats = groupChatService.getGroupChats(1L, LocalDateTime.parse("2023-05-07T02:47:36.651319"), LocalDateTime.now());
 //        assertEquals(1, groupChats.size());
 //        assertEquals("Hello World", groupChats
 //                .get(0)
@@ -102,29 +101,29 @@ package edu.msudenver.chat.groupchat;//package edu.msudenver.chat.groupchat;
 //        });
 //    }
 //
-//    @Test
-//    public void testDeleteGroupChat() throws Exception {
-//        GroupChat testMessage = new GroupChat();
-//        testMessage.setMessageId(1L);
-//        testMessage.setSenderId(1L);
-//        testMessage.setDateSent(Timestamp.valueOf(LocalDateTime.now()).toLocalDateTime());
-//        testMessage.setSenderId(1L);
-//        testMessage.setGroupId(1L);
-//        testMessage.setMessageBody("Hello World");
-//        Mockito.when(groupChatRepository.findById(Mockito.any())).thenReturn(Optional.of(testMessage));
-//        Mockito.when(groupChatRepository.existsById(Mockito.any())).thenReturn(true);
+////    @Test
+////    public void testDeleteGroupChat() throws Exception {
+////        GroupChat testMessage = new GroupChat();
+////        testMessage.setMessageId(1L);
+////        testMessage.setSenderId(1L);
+////        testMessage.setDateSent(Timestamp.valueOf(LocalDateTime.now()).toLocalDateTime());
+////        testMessage.setSenderId(1L);
+////        testMessage.setGroupId(1L);
+////        testMessage.setMessageBody("Hello World");
+////        Mockito.when(groupChatRepository.findById(Mockito.any())).thenReturn(Optional.of(testMessage));
+////        Mockito.when(groupChatRepository.existsById(Mockito.any())).thenReturn(true);
+////
+////        assertTrue(groupChatService.deleteGroupChat(1L));
+////    }
 //
-//        assertTrue(groupChatService.deleteGroupChat(1L));
-//    }
-//
-//    @Test
-//    public void testDeleteGroupChatNotFound() throws Exception {
-//        Mockito.when(groupChatRepository.findById(Mockito.any())).thenReturn(Optional.empty());
-//        Mockito.when(groupChatRepository.existsById(Mockito.any())).thenReturn(false);
-//        Mockito.doThrow(IllegalArgumentException.class)
-//                .when(groupChatRepository)
-//                .deleteById(Mockito.any());
-//
-//        assertFalse(groupChatService.deleteGroupChat(1L));
-//    }
+////    @Test
+////    public void testDeleteGroupChatNotFound() throws Exception {
+////        Mockito.when(groupChatRepository.findById(Mockito.any())).thenReturn(Optional.empty());
+////        Mockito.when(groupChatRepository.existsById(Mockito.any())).thenReturn(false);
+////        Mockito.doThrow(IllegalArgumentException.class)
+////                .when(groupChatRepository)
+////                .deleteById(Mockito.any());
+////
+////        assertFalse(groupChatService.deleteGroupChat(1L));
+////    }
 //}

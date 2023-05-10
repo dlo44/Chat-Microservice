@@ -34,29 +34,13 @@ public class GroupChatController {
         }
     }
 
-    @PostMapping(path = "/{groupId}", consumes = "application/json", produces = "application/json")
+    @PostMapping(consumes = "application/json", produces = "application/json")
     public ResponseEntity<GroupChat> createGroupChat(@RequestBody GroupChat groupChat) {
         try {
             return new ResponseEntity<>(groupChatService.saveGroupChat(groupChat), HttpStatus.CREATED);
         } catch (Exception e) {
             e.printStackTrace();
             return new ResponseEntity(ExceptionUtils.getStackTrace(e), HttpStatus.BAD_REQUEST);
-        }
-    }
-
-    @PutMapping(path = "/{groupId}/users/{user}", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<GroupChat> updateGroupChat(@PathVariable Long groupId, @RequestBody GroupChat updatedGroupChat) {
-        List<GroupChat> retrievedGroupChat = groupChatService.getAllMessages(groupId);
-        if (retrievedGroupChat != null) {
-            try {
-                return ResponseEntity.ok(groupChatService.saveGroupChat(updatedGroupChat));
-            } catch (Exception e) {
-                e.printStackTrace();
-                return new ResponseEntity(ExceptionUtils.getStackTrace(e), HttpStatus.BAD_REQUEST);
-            }
-        }
-        else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
